@@ -101,6 +101,10 @@ to make the web faster, safer, and more open.
 
 ## Requirement 1: Project write-up - UML
 
+### Activity Diagram
+
+![Activity Diagram](images/UML_activity_supplychain.png)
+
 ### Sequence Diagram
 
 ![Sequence Diagram](images/UML_sequence_supplychain.png)

@@ -99,6 +99,11 @@ npm run dev
 to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
+## Requirement 1: Project write-up - UML
+
+### Sequence Diagram
+
+![Sequence Diagram](images/UML_sequence_supplychain.png)
 
 ## Authors
 

@@ -10,7 +10,7 @@ contract DistributorRole {
   // Define 2 events, one for Adding, and other for Removing
 
   // Define a struct 'distributors' by inheriting from 'Roles' library, struct Role
-
+  Roles.Role private distributors;
   // In the constructor make the address that deploys this contract the 1st distributor
   constructor() public {
 

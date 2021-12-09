@@ -109,6 +109,12 @@ to make the web faster, safer, and more open.
 
 ![Sequence Diagram](images/UML_sequence_supplychain.png)
 
+### State Diagram
+
+### Class Diagram
+
+![Class Diagram](images/UML_class_supplychain.png)
+
 ## Authors
 
 See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.

@@ -319,19 +319,17 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   string memory originFarmLongitude
   ) 
   {
-  // Assign values to the 8 parameters
-  
-    
+  // Assign values to the 8 parameters  
   return 
   (
-  itemSKU,
-  itemUPC,
-  ownerID,
-  originFarmerID,
-  originFarmName,
-  originFarmInformation,
-  originFarmLatitude,
-  originFarmLongitude
+  items[_upc].sku,
+  _upc,
+  items[_upc].ownerID,
+  items[_upc].originFarmerID,
+  items[_upc].originFarmName,
+  items[_upc].originFarmInformation,
+  items[_upc].originFarmLatitude,
+  items[_upc].originFarmLongitude
   );
   }
 
@@ -350,19 +348,19 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   ) 
   {
     // Assign values to the 9 parameters
-  
+    itemState = uint(items[_upc].itemState);
     
-  return 
-  (
-  itemSKU,
-  itemUPC,
-  productID,
-  productNotes,
-  productPrice,
-  itemState,
-  distributorID,
-  retailerID,
-  consumerID
-  );
+    return 
+    (
+    items[_upc].sku,
+    _upc,
+    items[_upc].productID,
+    items[_upc].productNotes,
+    items[_upc].productPrice,
+    itemState,
+    items[_upc].distributorID,
+    items[_upc].retailerID,
+    items[_upc].consumerID
+    );
   }
 }

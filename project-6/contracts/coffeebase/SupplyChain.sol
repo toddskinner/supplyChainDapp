@@ -11,7 +11,7 @@ import '../coffeeaccesscontrol/RetailerRole.sol';
 contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, RetailerRole {
 
   // Define 'owner'
-  address owner;
+  address contractOwner;
 
   // Define a variable called 'upc' for Universal Product Code (UPC)
   uint  upc;
@@ -152,15 +152,15 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   // and set 'sku' to 1
   // and set 'upc' to 1
   constructor() payable {
-    owner = msg.sender;
+    contractOwner = msg.sender;
     sku = 1;
     upc = 1;
   }
 
   // Define a function 'kill' if required
   function kill() public {
-    if (msg.sender == owner) {
-      address payable addr = payable(owner); 
+    if (msg.sender == contractOwner) {
+      address payable addr = payable(contractOwner); 
       selfdestruct(addr);
     }
   }
@@ -320,16 +320,24 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   ) 
   {
   // Assign values to the 8 parameters  
+  itemSKU = items[_upc].sku;
+  ownerID = items[_upc].ownerID;
+  originFarmerID = items[_upc].originFarmerID;
+  originFarmName = items[_upc].originFarmName;
+  originFarmInformation = items[_upc].originFarmInformation;
+  originFarmLatitude = items[_upc].originFarmLatitude;
+  originFarmLongitude = items[_upc].originFarmLongitude;
+
   return 
   (
-  items[_upc].sku,
+  itemSKU,
   _upc,
-  items[_upc].ownerID,
-  items[_upc].originFarmerID,
-  items[_upc].originFarmName,
-  items[_upc].originFarmInformation,
-  items[_upc].originFarmLatitude,
-  items[_upc].originFarmLongitude
+  ownerID,
+  originFarmerID,
+  originFarmName,
+  originFarmInformation,
+  originFarmLatitude,
+  originFarmLongitude
   );
   }
 
@@ -348,19 +356,26 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   ) 
   {
     // Assign values to the 9 parameters
+    itemSKU = items[_upc].sku;
+    productID = items[_upc].productID;
+    productNotes = items[_upc].productNotes;
+    productPrice = items[_upc].productPrice;
     itemState = uint(items[_upc].itemState);
-    
+    distributorID = items[_upc].distributorID;
+    retailerID = items[_upc].retailerID;
+    consumerID = items[_upc].consumerID;
+
     return 
     (
-    items[_upc].sku,
+    itemSKU,
     _upc,
-    items[_upc].productID,
-    items[_upc].productNotes,
-    items[_upc].productPrice,
+    productID,
+    productNotes,
+    productPrice,
     itemState,
-    items[_upc].distributorID,
-    items[_upc].retailerID,
-    items[_upc].consumerID
+    distributorID,
+    retailerID,
+    consumerID
     );
   }
 }

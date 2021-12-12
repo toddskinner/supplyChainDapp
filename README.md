@@ -99,6 +99,10 @@ npm run dev
 to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
+1. **Truffle Version**: Truffle v5.4.14 (core: 5.4.14)
+2. **Solidity Version**: ^0.8.0 (solc-js)
+3. **Web3 Version**: v1.6.1
+
 ## Contract on the Rinkeby Network
 
 **Contract address:**  0x9Cfa4D35ab1e434CFa43395Ad9d4FDD586AB40f3   

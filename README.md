@@ -122,6 +122,8 @@ to make the web faster, safer, and more open.
 
 ### State Diagram
 
+![State Diagram](images/UML_state_supplychain.png)
+
 ### Class Diagram
 
 ![Class Diagram](images/UML_class_supplychain.png)
